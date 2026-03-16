@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<title>Vientogiro</title>
+
+<style>
+
+body{
+background:#f0f0f0;
+font-family:Arial;
+text-align:center;
+padding:40px;
+}
+
+h1{
+margin-bottom:30px;
+}
+
+#libro{
+background:white;
+width:420px;
+margin:auto;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 15px rgba(0,0,0,0.2);
+}
+
+img{
+width:360px;
+height:500px;
+border-radius:6px;
+}
+
+#texto{
+font-size:18px;
+margin-top:15px;
+}
+
+button{
+margin:10px;
+padding:10px 20px;
+border:none;
+background:#444;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#222;
+}
+
+footer{
+margin-top:40px;
+padding:15px;
+background:#ddd;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Vientogiro</h1>
+
+<div id="libro">
+
+<img id="imagen" src="dibujos/imagen1.png">
+
+<p id="texto"> Agua ~ surgir</p>
+
+<button onclick="anterior()">Anterior</button>
+<button onclick="siguiente()">Siguiente</button>
+
+</div>
+
+<footer>
+
+<p>ZYN</p>
+
+<p>
+"Piensa en términos de energía, frecuencia y vibración."
+</p>
+
+<p>N. Tesla</p>
+
+</footer>
+
+<script>
+
+let pagina=0;
+
+let imagenes=[
+"dibujos/imagen1.png",
+"dibujos/imagen2.png",
+"dibujos/imagen3.png",
+"dibujos/imagen4.png",
+"dibujos/imagen5.png"
+];
+
+let textos=[
+"Agua ~ surgir",
+"Tierra ~ crear",
+"Aire ~ transformar",
+"Fuego ~ fluir",
+"Piensa en términos de energía, frecuencia y vibración. — N. Tesla"
+];
+
+function siguiente(){
+
+pagina++;
+
+if(pagina>=imagenes.length){
+pagina=0;
+}
+
+document.getElementById("imagen").src=imagenes[pagina];
+document.getElementById("texto").innerText=textos[pagina];
+
+}
+
+function anterior(){
+
+pagina--;
+
+if(pagina<0){
+pagina=imagenes.length-1;
+}
+
+document.getElementById("imagen").src=imagenes[pagina];
+document.getElementById("texto").innerText=textos[pagina];
+
+}
+
+</script>
+
+</body>
+</html>
